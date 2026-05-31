@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+plotly
+scikit-learn
+nltk
+spacy
+transformers
+torch
+keybert
+wordcloud
+snowflake-connector-python
+sqlalchemy
+psycopg2-binary
