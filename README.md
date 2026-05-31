@@ -9,18 +9,3 @@ To analyse unstructured product review data and generate meaningful insights suc
 The system will summarise reviews for specific products, identify positive and negative feedback, detect common customer complaints, and provide sentiment and trend analysis in a visualised format. These insights can help both customers who want to purchase a product and sellers who want to understand customer feedback and improve their products.
 
 
-=======
-=======
->>>>>>> Stashed changes
-# product-review-intelligence-platform
-
-Sentiment: cardiffnlp/twitter-roberta-base-sentiment-latest
-Summarization: sshleifer/distilbart-cnn-12-6
-Keywords: KeyBERT
-Semantic Search: all-MiniLM-L6-v2
-<<<<<<< Updated upstream
-Pros/Cons: OpenAI API or rule-based extraction
->>>>>>> Stashed changes
-=======
-Pros/Cons: OpenAI API or rule-based extraction
->>>>>>> Stashed changes
