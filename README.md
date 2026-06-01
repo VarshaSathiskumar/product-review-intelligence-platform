@@ -8,6 +8,7 @@ Users can:
 - Analyze Kaggle product review datasets
 - Explore interactive dashboards and AI-generated insights
 
+> 🚧 This project is currently in progress and under active development.
 ---
 
 # 🛠️ Tech Stack
