@@ -1,10 +1,62 @@
+# 🛍️ Product Review Intelligence Platform
 
-# Product review intelligence platform
+## 📌 Overview
+An AI-powered web application that analyzes unstructured product review data to generate meaningful insights such as sentiment trends, review summaries, pros and cons, customer complaints, and product comparisons.
 
-# Objectives:
-To analyse unstructured product review data and generate meaningful insights such as review summaries, advantages and disadvantages of products, customer sentiment, and review trends. The system will support two options: users can either upload their own CSV review dataset or use a Kaggle product review dataset for analysis.
+Users can:
+- Upload their own CSV review datasets
+- Analyze Kaggle product review datasets
+- Explore interactive dashboards and AI-generated insights
 
-# Expected outcomes:
-The system will summarise reviews for specific products, identify positive and negative feedback, detect common customer complaints, and provide sentiment and trend analysis in a visualised format. These insights can help both customers who want to purchase a product and sellers who want to understand customer feedback and improve their products.
+---
 
+# 🛠️ Tech Stack
 
+| Layer | Technology | Purpose |
+|---|---|---|
+| Frontend / Web App | Streamlit | Builds the interactive web application and dashboard UI |
+| Backend APIs | FastAPI | Handles backend API logic and model integration |
+| Programming Language | Python | Core language for NLP, data processing, and backend development |
+| Data Warehouse | Snowflake | Stores processed review analytics and structured insights |
+| Data Transformation | dbt | Transforms raw review data into clean, analytics-ready tables in Snowflake |
+| Database | PostgreSQL | Stores application and processed review data |
+| Visualisation | Apache Superset | Builds BI-style dashboards and trend analytics |
+| Agentic AI | OpenAI API | Enables AI review analyst and intelligent Q&A features |
+| Deployment | Streamlit Community Cloud | Hosts the interactive web application |
+
+---
+
+# 🚀 Core Features
+
+- CSV review dataset upload
+- Kaggle dataset support
+- Sentiment analysis
+- AI-generated review summaries
+- Pros and cons extraction
+- Customer complaint detection
+- Semantic review search
+- Product comparison analytics
+- Interactive dashboards and visualizations
+- AI review analyst agent
+
+---
+
+# 🌐 Deployment
+
+The application will be:
+
+- Developed locally using Python and Jupyter notebooks
+- Version controlled using GitHub
+- Deployed using Streamlit Community Cloud
+- Containerized using Docker for scalability
+
+---
+
+# 🎯 Expected Outcomes
+
+- Summarize customer reviews
+- Detect positive and negative feedback
+- Identify recurring customer complaints
+- Provide sentiment and trend analysis
+- Help customers make informed purchasing decisions
+- Help sellers improve products based on customer feedback
