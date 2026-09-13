@@ -4,7 +4,6 @@
 An AI-powered web application that analyzes unstructured product review data to generate meaningful insights such as sentiment trends, review summaries, pros and cons, customer complaints, and product comparisons.
 
 Users can:
-- Upload their own CSV review datasets
 - Analyze Kaggle product review datasets
 - Explore interactive dashboards and AI-generated insights
 
