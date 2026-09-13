@@ -18,11 +18,9 @@ Users can:
 | Frontend / Web App | Streamlit | Builds the interactive web application and dashboard UI |
 | Backend APIs | FastAPI | Handles backend API logic and model integration |
 | Programming Language | Python | Core language for NLP, data processing, and backend development |
-| Data Warehouse | Snowflake | Stores processed review analytics and structured insights |
-| Data Transformation | dbt | Transforms raw review data into clean, analytics-ready tables in Snowflake |
 | Database | PostgreSQL | Stores application and processed review data |
+| Models | Llama 3.1, BGE-M3, and BERTopic | Handles LLM-based analysis, multilingual embeddings, and topic modeling
 | Visualisation | Apache Superset | Builds BI-style dashboards and trend analytics |
-| Agentic AI | OpenAI API | Enables AI review analyst and intelligent Q&A features |
 | Deployment | Streamlit Community Cloud | Hosts the interactive web application |
 
 ---
