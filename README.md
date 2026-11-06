@@ -4,9 +4,11 @@
 An AI-powered web application that analyzes unstructured product review data to generate meaningful insights such as sentiment trends, review summaries, pros and cons, customer complaints, and product comparisons.
 
 Users can:
+- Upload their own CSV review datasets
 - Analyze Kaggle product review datasets
 - Explore interactive dashboards and AI-generated insights
 
+> 🚧 This project is currently in progress and under active development.
 ---
 
 # 🛠️ Tech Stack
@@ -16,9 +18,11 @@ Users can:
 | Frontend / Web App | Streamlit | Builds the interactive web application and dashboard UI |
 | Backend APIs | FastAPI | Handles backend API logic and model integration |
 | Programming Language | Python | Core language for NLP, data processing, and backend development |
+| Data Warehouse | Snowflake | Stores processed review analytics and structured insights |
+| Data Transformation | dbt | Transforms raw review data into clean, analytics-ready tables in Snowflake |
 | Database | PostgreSQL | Stores application and processed review data |
-| Models | Llama 3.1, BGE-M3, and BERTopic | Handles LLM-based analysis, multilingual embeddings, and topic modeling
 | Visualisation | Apache Superset | Builds BI-style dashboards and trend analytics |
+| Agentic AI | OpenAI API | Enables AI review analyst and intelligent Q&A features |
 | Deployment | Streamlit Community Cloud | Hosts the interactive web application |
 
 ---
