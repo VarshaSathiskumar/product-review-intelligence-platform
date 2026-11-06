@@ -1,64 +1,55 @@
 """
-Text summarization utilities for product reviews.
-
-This module provides functionality for generating summaries
-of product reviews using extractive and abstractive techniques.
+Review summarization with Llama 3.1 (Ollama).
 """
 
-from typing import List, Optional
-import pandas as pd
+import re
+from concurrent.futures import ThreadPoolExecutor
+from typing import List
+
+from utils.llm import chat
+
+_SYSTEM = (
+    "You summarize customer product reviews. Be faithful to the reviews, "
+    "do not invent details, and write in plain language. Reply with the summary "
+    "text only: no introduction such as 'Here is a summary', no headings, no bullet points."
+)
+
+_PROMPTS = {
+    "pros": (
+        "Below are positive reviews of one product. Summarize what customers "
+        "like in 2-3 sentences, focusing on recurring points.\n\nReviews:\n{text}"
+    ),
+    "cons": (
+        "Below are negative reviews of one product. Summarize what customers "
+        "complain about in 2-3 sentences, focusing on recurring problems.\n\nReviews:\n{text}"
+    ),
+    "general": (
+        "Summarize the following product reviews in 2-3 sentences.\n\nReviews:\n{text}"
+    ),
+}
 
 
-def extractive_summary(text: str, num_sentences: int = 3) -> str:
-    """
-    Generate an extractive summary of text.
-    
-    Args:
-        text: Text to summarize
-        num_sentences: Number of sentences in summary
-        
-    Returns:
-        Summarized text
-    """
-    pass
+_PREAMBLE = re.compile(r"^\s*(here(?:'s| is| are)\b[^\n:]*:)\s*", re.IGNORECASE)
 
 
-def abstractive_summary(text: str, max_length: int = 100) -> str:
-    """
-    Generate an abstractive summary of text.
-    
-    Args:
-        text: Text to summarize
-        max_length: Maximum length of summary
-        
-    Returns:
-        Summarized text
-    """
-    pass
+def _strip_preamble(text: str) -> str:
+    """Drop a leading 'Here is a summary of ...:' line if the model adds one anyway."""
+    return _PREAMBLE.sub("", text).strip()
 
 
-def summarize_batch(texts: List[str]) -> List[str]:
-    """
-    Summarize multiple texts.
-    
-    Args:
-        texts: List of texts to summarize
-        
-    Returns:
-        List of summaries
-    """
-    pass
+def summarize(text: str, kind: str = "general", max_tokens: int = 160) -> str:
+    """Summarize a block of review text. kind: 'pros' | 'cons' | 'general'."""
+    return _strip_preamble(chat(
+        _PROMPTS[kind].format(text=text),
+        system=_SYSTEM,
+        temperature=0.2,
+        max_tokens=max_tokens,
+    ))
 
 
-def generate_review_summary(df: pd.DataFrame, review_col: str) -> str:
-    """
-    Generate summary from multiple reviews.
-    
-    Args:
-        df: DataFrame containing reviews
-        review_col: Column name containing review text
-        
-    Returns:
-        Summary of all reviews
-    """
-    pass
+def summarize_batch(
+    texts: List[str], kind: str = "general", max_workers: int = 4
+) -> List[str]:
+    """Summarize multiple texts concurrently (match OLLAMA_NUM_PARALLEL)."""
+    with ThreadPoolExecutor(max_workers=max_workers) as ex:
+        return list(ex.map(lambda t: summarize(t, kind), texts))

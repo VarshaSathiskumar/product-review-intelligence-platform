@@ -1,3 +1,4 @@
+pyspark
 streamlit
 pandas
 numpy
@@ -8,7 +9,14 @@ spacy
 transformers
 torch
 keybert
+sentence-transformers
 wordcloud
 snowflake-connector-python
 sqlalchemy
 psycopg2-binary
+ollama
+bertopic
+umap-learn
+hdbscan
+rouge-score
+seaborn
