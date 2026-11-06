@@ -23,6 +23,18 @@ Users can:
 
 ---
 
+# 🤖 AI Models
+
+| Model | Runtime | Used for |
+|---|---|---|
+| Llama 3.1 8B (`llama3.1:8b`) | Ollama (local) | Sentiment analysis (positive / neutral / negative with confidence, complaint flagging) and pros/cons review summarisation |
+| BGE-M3 (`BAAI/bge-m3`) | sentence-transformers | Semantic embeddings of reviews and summaries (used for topic discovery and summary relevance checks) |
+| BERTopic | Python library (UMAP + HDBSCAN) on BGE-M3 embeddings | Discovering recurring customer complaints per product |
+
+Setup: install Ollama, run `ollama pull llama3.1:8b`, then `pip install -r requirements.txt`. BGE-M3 is downloaded automatically on first use.
+
+---
+
 # 🚀 Core Features
 
 - CSV review dataset upload
